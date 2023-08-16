@@ -31,7 +31,7 @@ public class PageImpl implements Page {
 
     @Override
     public void release() {
-
+        pc.release(this);
     }
 
     @Override

@@ -103,7 +103,7 @@ public class PageCacheImpl extends AbstractCache<Page> implements PageCache{
     }
 
     @Override
-    public void truncateByBgno(int maxPgno) {
+    public void truncateByPgno(int maxPgno) {
         long size = pageOffset(maxPgno + 1);
         try {
             file.setLength(size);

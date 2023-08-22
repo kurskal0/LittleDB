@@ -27,6 +27,7 @@ public interface DataItem {
     byte[] getOldRaw();
     SubArray getRaw();
 
+    // 封装原始数据项
     public static byte[] wrapDataItemRaw(byte[] raw){
         byte[] valid = new byte[1];
         byte[] size = Parser.short2Byte((short) raw.length);

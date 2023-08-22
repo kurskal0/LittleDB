@@ -25,7 +25,7 @@ public class TransactionManagerImpl implements TransactionManager{
     private static final byte FIELD_TRAN_ABORTED = 2;
 
     // 超级事务，永远处于提交状态
-    private static final byte SUPER_XID = 0;
+    public static final long SUPER_XID = 0;
 
     static final String XID_FIELD_SUFFIX = ".xid";
 

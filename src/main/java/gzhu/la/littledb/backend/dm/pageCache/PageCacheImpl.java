@@ -23,7 +23,7 @@ public class PageCacheImpl extends AbstractCache<Page> implements PageCache{
     private FileChannel fc;
     private Lock fileLock;
 
-    // 记录当前打开的数据库文件有多少页，这个数字在数据库文件被打开时就会被计算，并在新建页面时自增。
+    // 记录当前打开的数据库文件有多少页，这个数字在数据库文件打开时就会被计算，并在新建页面时自增。
     private AtomicInteger pageNumbers;
 
     PageCacheImpl(RandomAccessFile file, FileChannel fileChannel, int maxResource) {
@@ -102,6 +102,7 @@ public class PageCacheImpl extends AbstractCache<Page> implements PageCache{
         release(page.getPageNumber());
     }
 
+    // 删除指定位置后面的数据页
     @Override
     public void truncateByPgno(int maxPgno) {
         long size = pageOffset(maxPgno + 1);

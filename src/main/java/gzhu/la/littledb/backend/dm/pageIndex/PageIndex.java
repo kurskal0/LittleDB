@@ -38,6 +38,7 @@ public class PageIndex {
                     number++;  // 没有正好这么大区间的页数，就把更大容量的给它
                     continue;
                 }
+                // 如果lists中有PageInfo对象，代码从列表中移除并返回第一个对象
                 return lists[number].remove(0);
             }
             return null;

@@ -93,7 +93,7 @@ public class DataManagerImpl extends AbstractCache<DataItem> implements DataMana
             throw Error.DatabaseBusyException;
         }
 
-        System.out.println(pi.pageNumber);
+//        System.out.println(pi.pageNumber);
         Page pg = null;
         int freeSpace = 0;
         try {
